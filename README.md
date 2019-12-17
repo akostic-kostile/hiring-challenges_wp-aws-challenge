@@ -29,6 +29,6 @@ After the script is done it will output DNS endpoint of ELB that can be used to 
 
 ## Improvements
 
-Obviously SSL would be a big improvement here. I decided not to use it as that would either require a real certificate (which costs money and would add the need to do some DNS management) or a selfsigned one which would output a warning in all broswers, and that sort of defeats the purpose.
-RDS instance is also using the same (public) subnets as EC2 instances. Adding private subnets just for 1 RDS instance seemed unnecessary for a proof of concept such as this as it would complicate the whole configuration by a fair amount without adding much practical benefit. So RDS instance is only protected by a security group.
-Script is faily slow, EC2 instances are waiting for RDS to be fully provisioned because they need to write DB endpoint into a configuration file. RDS provisioning takes 10-15 minutes, can't really think of a good way to speed this process.
+- Obviously SSL would be a big improvement here. I decided not to use it as that would either require a real certificate (which costs money and would add the need to do some DNS management) or a selfsigned one which would output a warning in all broswers, and that sort of defeats the purpose.
+- RDS instance is also using the same (public) subnets as EC2 instances. Adding private subnets just for 1 RDS instance seemed unnecessary for a proof of concept such as this as it would complicate the whole configuration by a fair amount without adding much practical benefit. So RDS instance is only protected by a security group.
+- Script is faily slow, EC2 instances are waiting for RDS to be fully provisioned because they need to write DB endpoint into a configuration file. RDS provisioning takes 10-15 minutes, can't really think of a good way to speed this process.
